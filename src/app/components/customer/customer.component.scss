@@ -1,0 +1,19 @@
+.context{
+  display: flex;
+  align-items: center;
+  height: 35px;
+}
+
+mat-icon{
+  width: 20px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+mat-icon:hover{
+  color: red;
+  cursor: pointer;
+}

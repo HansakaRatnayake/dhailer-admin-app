@@ -1,0 +1,43 @@
+<h2 mat-dialog-title>Manage Product Images</h2>
+<form [formGroup]="form" (ngSubmit)="uploadImage(fileInput)">
+  <mat-dialog-content class="mat-typography">
+    <div class="row">
+
+      <div class="col-12">
+        <label for="img-file" class="form-label">Product Images</label>
+        <input #fileInput type="file" id="img-file" name="img-file" class="form-control"
+               (change)="onFileSelected($event)">
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="col-12 image-preview" *ngIf="imageURL">
+        <div class="image-preview-outer">
+          <img [src]="imageURL">
+        </div>
+      </div>
+
+    </div>
+    <hr>
+    <br>
+    <div class="col-12">
+      <div class="image-tray-outer" *ngIf="isHaveImages" >
+        <div class="image-outer" *ngFor="let images of data.productImages">
+          <img src="{{images.resourceurl}}">
+        </div>
+      </div>
+      <div class="not-have-images-text-outer" *ngIf="!isHaveImages">
+        <p>Haven't any images found</p>
+      </div>
+
+
+    </div>
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button type="submit"  [disabled]="!activeProceed">Proceed</button>
+  </mat-dialog-actions>
+</form>

@@ -1,0 +1,78 @@
+<div class="outer" style="padding: 20px">
+  <div class="container">
+    <hr>
+    <h4>Product Managment</h4>
+    <hr>
+    <div class="row">
+      <div class="col-4 txt-search-outer">
+        <form [formGroup]="searchform">
+          <input type="search" name="" id="txt-search" class="form-control txt-search" placeholder="Search hear" formControlName="text">
+        </form>
+      </div>
+
+      <div class="col-8 btn-product-outer">
+        <button class="btn btn-primary" (click)="openNewProductDialogBox()">+ New Product</button>
+      </div>
+      <br>
+      <br>
+      <br>
+      <div class="col-12">
+        <table class="table">
+          <thead>
+          <tr>
+            <th>#Id</th>
+            <th>Description</th>
+            <th>Qty</th>
+            <th>Unit Price</th>
+            <th>images</th>
+            <th>Options</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let product of productarray ">
+            <td>
+              <div class="context">
+                {{product.propertyId}}&nbsp;
+                <mat-icon (click)="coppyText(product.propertyId)">content_copy</mat-icon>
+              </div>
+            </td>
+            <td>
+              <div class="context">
+                {{product.description}}
+              </div>
+            </td>
+            <td>
+              <div class="context">
+                {{product.qty}}
+              </div>
+            </td>
+            <td>
+              <div class="context">
+                {{product.unitprice | currency:'USD'}} | {{product.unitprice * currencyrate | currency:'LKR'}}
+              </div>
+            </td>
+            <td>
+              <div class="context">
+                <span (click)="openManageProductImagesDialogBox(product)">Manage</span>
+              </div>
+            </td>
+            <td>
+              <div class="context">
+                <button color="primary" mat-icon-button matTooltip="edit" (click)="openUpdateProductDialogBox(product)">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button color="warn" mat-icon-button  matTooltip="delete" >
+                  <mat-icon>delete_sweep</mat-icon>
+                </button>
+              </div>
+            </td>
+          </tr>
+
+          </tbody>
+        </table>
+
+
+      </div>
+    </div>
+  </div>
+</div>

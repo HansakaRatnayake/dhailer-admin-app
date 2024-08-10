@@ -1,0 +1,38 @@
+.context{
+  display: flex;
+  align-items: center;
+  height: 35px;
+
+  span{
+    color: green;
+  }
+  span:hover{
+    color: dodgerblue;
+    cursor: pointer;
+  }
+}
+
+mat-icon{
+  width: 20px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+mat-icon:hover{
+  color: red;
+  cursor: pointer;
+}
+
+.btn-product-outer{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.txt-search-outer{
+  align-content: center;
+}
+
+
