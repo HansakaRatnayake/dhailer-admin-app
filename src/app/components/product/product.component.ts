@@ -7,12 +7,12 @@ import {NewProductComponent} from "./inner/new-product/new-product.component";
 import {UpdateProductComponent} from "./inner/update-product/update-product.component";
 import {MatTooltip} from "@angular/material/tooltip";
 import {ManageProductImageComponent} from "./inner/manage-product-image/manage-product-image.component";
-import {ProductService} from "../../services/product/product.service";
+import {ProductService} from "../../core/service/product/product.service";
 import {CurrencyPipe, NgForOf} from "@angular/common";
 import {FormControl, FormGroup, ReactiveFormsModule} from "@angular/forms";
 import {debounceTime} from "rxjs";
-import {ClipboardService} from "../../services/clipboard/clipboard.service";
-import {ForexService} from "../../services/currencyexchanger/forex.service";
+import {ClipboardService} from "../../core/service/clipboard/clipboard.service";
+import {ForexService} from "../../core/service/currencyexchanger/forex.service";
 
 
 @Component({

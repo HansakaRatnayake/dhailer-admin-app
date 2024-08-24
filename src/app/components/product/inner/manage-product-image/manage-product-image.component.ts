@@ -9,8 +9,8 @@ import {
 } from "@angular/material/dialog";
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {CommonModule} from "@angular/common";
-import {SnackbarService} from "../../../../services/snackbar/snackbar.service";
-import {ProductimageService} from "../../../../services/product-image/productimage.service";
+import {SnackbarService} from "../../../../core/service/snackbar/snackbar.service";
+import {ProductimageService} from "../../../../core/service/product-image/productimage.service";
 import {elementAt} from "rxjs";
 
 @Component({

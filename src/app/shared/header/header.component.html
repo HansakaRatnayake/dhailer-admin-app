@@ -1,0 +1,26 @@
+<div class="header-outer">
+
+  <div class="left-outer">
+    <ng-content></ng-content>
+  </div>
+
+  <div class="right-outer">
+
+    <div class="avatar-icon-outer" >
+      <button color="primary" mat-icon-button matTooltip="calender">
+        <mat-icon>event_note</mat-icon>
+      </button>
+
+      <tui-badge-notification size="xs">9</tui-badge-notification>
+    </div>
+    <div class="avatar-icon-outer" >
+      <button color="primary" mat-icon-button matTooltip="notification">
+        <mat-icon>notifications</mat-icon>
+      </button>
+      <tui-badge-notification size="xs">15</tui-badge-notification>
+    </div>
+    <div class="avatar-icon-outer" >
+      <tui-avatar src="@tui.user" />
+    </div>
+  </div>
+</div>

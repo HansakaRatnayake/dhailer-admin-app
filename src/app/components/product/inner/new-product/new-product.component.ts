@@ -10,7 +10,7 @@ import {
 import {MatButton} from "@angular/material/button";
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
-import {ProductService} from "../../../../services/product/product.service";
+import {ProductService} from "../../../../core/service/product/product.service";
 
 @Component({
   selector: 'app-new-product',

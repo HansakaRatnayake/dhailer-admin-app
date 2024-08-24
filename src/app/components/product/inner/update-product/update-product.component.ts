@@ -8,8 +8,8 @@ import {
   MatDialogTitle
 } from "@angular/material/dialog";
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
-import {ProductService} from "../../../../services/product/product.service";
-import {SnackbarService} from "../../../../services/snackbar/snackbar.service";
+import {ProductService} from "../../../../core/service/product/product.service";
+import {SnackbarService} from "../../../../core/service/snackbar/snackbar.service";
 
 @Component({
   selector: 'app-update-product',

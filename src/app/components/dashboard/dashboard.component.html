@@ -1,13 +1,169 @@
-
-<div class="outer">
-  <div class="container" style="padding: 20px">
-    <h2 style="padding: 0px;margin: 0px">Dashbord</h2>
-    <hr>
-
-    <div class="btn-group" role="group" aria-label="Basic example">
-      <button type="button" class="btn btn-primary" routerLink="/customers">Customers</button>
-      <button type="button" class="btn btn-primary" routerLink="/products">Products</button>
-      <button type="button" class="btn btn-primary"  routerLink="/orders">Orders</button>
+<!--    <div class="btn-group" role="group" aria-label="Basic example">-->
+<!--      <button type="button" class="btn btn-primary" routerLink="/customers">Customers</button>-->
+<!--      <button type="button" class="btn btn-primary" routerLink="/products">Products</button>-->
+<!--      <button type="button" class="btn btn-primary"  routerLink="/orders">Orders</button>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<div class="dashboard-outer">
+  <div class="left-pane">
+    <div class="side-nav-outer">
+      <app-side-pannel-bar></app-side-pannel-bar>
     </div>
   </div>
+
+  <div class="right-pane">
+    <div class="header-outer">
+      <app-header>
+        <mat-tab-group animationDuration="600ms" color="accent">
+          <mat-tab label="Dashboard"></mat-tab>
+          <mat-tab label="Reports"></mat-tab>
+          <mat-tab label="Settings"></mat-tab>
+        </mat-tab-group>
+      </app-header>
+    </div>
+
+    <div class="content-outer container-fluid">
+      <div class="row">
+        <div class="col-12 sales-overview">
+          <mat-card appearance="outlined">
+            <mat-card-header style="font-family: 'Catamaran';font-weight: 700;font-size: 22px">Sales Overview
+            </mat-card-header>
+            <mat-card-content>
+              <div class="row">
+                <div class="col-6 s2">
+                  <div class="chart-outer">
+                    <div class="left-pane-outer">
+                      <mat-card appearance="outlined">
+                        <mat-card-header>Total Sales</mat-card-header>
+                        <mat-card-content>$120,000</mat-card-content>
+                      </mat-card>
+                    </div>
+                    <div class="right-pane-outer">
+                      <tui-axes
+                        class="axes"
+                        [horizontalLines]="2"
+                        [tuiLineChartHint]="hintContent"
+                        [verticalLines]="4"
+                      >
+                        <tui-line-chart
+                          [dots]="true"
+                          [height]="200"
+                          [value]="value1"
+                          [width]="400"
+                          [x]="0"
+                          [xStringify]="stringify"
+                          [y]="0"
+                          [yStringify]="stringify"
+                        />
+                      </tui-axes>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 s1">
+                  <div class="chart-outer">
+                    <div class="left-pane-outer">
+                      <mat-card appearance="outlined">
+                        <mat-card-header>Sales Target</mat-card-header>
+                        <mat-card-content>$150,000</mat-card-content>
+                      </mat-card>
+                    </div>
+                    <div class="right-pane-outer">
+                      <tui-bar-set
+                        class="bars"
+                        [size]="null"
+                        [value]="value2"
+                      />
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-6 s2" >
+                  <div class="chart-outer">
+                    <div class="left-pane-outer">
+                      <mat-card appearance="outlined">
+                        <mat-card-header>New Customers</mat-card-header>
+                        <mat-card-content>560</mat-card-content>
+                      </mat-card>
+                    </div>
+                    <div class="right-pane-outer">
+
+                      <tui-pie-chart
+                        size="m"
+                        [tuiHintContent]="content"
+                        [value]="value3"
+                      />
+
+                      <ng-template
+                        #content
+                        let-index
+                      >
+                        <span>{{ value3[index] | tuiAmount: 'RUB' | async }}</span>
+                        <div>{{ labels[index] }}</div>
+                      </ng-template>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <br>
+        <div class="col-12 monthly-sales-overview">
+
+          <mat-card appearance="outlined">
+            <mat-card-header>Monthly Sales Overview</mat-card-header>
+
+            <mat-card-content>
+
+              <div class="row">
+                <div class="col-12">
+                  <p>
+                    <tui-input-date-range
+                      [maxlength]="maxLength.month"
+                      [(ngModel)]="range"
+                    >
+                      Range
+                    </tui-input-date-range>
+                  </p>
+
+                  <tui-axes
+                    *ngIf="computeLabels$(range) | async as labels"
+                    class="axes1"
+                    [axisXLabels]="labels"
+                    [horizontalLines]="4"
+                    [verticalLines]="labels.length - 1"
+                  >
+                    <tui-line-days-chart
+                      class="chart"
+                      [height]="200"
+                      [value]="value"
+                      [xStringify]="xStringify$ | async"
+                      [yStringify]="yStringify"
+                    />
+                  </tui-axes>
+                </div>
+              </div>
+
+
+
+            </mat-card-content>
+          </mat-card>
+
+        </div>
+        <div class="col-12">
+
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+
+
 </div>
