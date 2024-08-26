@@ -1,0 +1,46 @@
+<div class="table-outer">
+
+  <table class="table">
+    <thead >
+    <tr>
+      <th >Order Number</th>
+      <th >Customer Name</th>
+      <th >Address</th>
+      <th >Total Amount</th>
+      <th >Status</th>
+      <th >Actions</th>
+    </tr>
+    </thead>
+
+
+
+      <tbody>
+      <tr *ngFor="let data of sampledata">
+        <td>{{data.ordernumber}}</td>
+        <td>{{data.customername}}</td>
+        <td>{{data.address}}</td>
+        <td>{{data.total}}</td>
+        <td>
+          <span
+            style="width:55%;
+            height:auto;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            color:rgba(12,94,182,0.93);
+            background: #F0F7FEFF;
+            border-radius: 15px;
+            padding: 3px;
+            font-size: 12px;
+            ">
+            {{data.status}}
+          </span>
+        </td>
+        <td> <button mat-flat-button>View</button></td>
+      </tr>
+      </tbody>
+
+  </table>
+
+
+</div>

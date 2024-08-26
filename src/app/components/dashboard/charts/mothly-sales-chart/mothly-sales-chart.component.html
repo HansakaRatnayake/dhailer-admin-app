@@ -1,0 +1,30 @@
+<div class="chart-outer">
+
+
+  <p>
+    <tui-input-date-range
+      [maxlength]="maxLength"
+      [(ngModel)]="range"
+    >
+    </tui-input-date-range>
+  </p>
+  <tui-axes
+    *ngIf="computeLabels$(range) | async as labels"
+    class="axes"
+    [axisXLabels]="labels"
+    [horizontalLines]="4"
+    [verticalLines]="labels.length - 1"
+  >
+    <tui-line-days-chart
+      class="chart"
+      [height]="200"
+      [value]="value"
+      [xStringify]="xStringify$ | async"
+      [yStringify]="yStringify"
+    />
+  </tui-axes>
+
+
+
+
+</div>

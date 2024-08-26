@@ -24,10 +24,10 @@
     </div>
 
     <div class="content-outer container-fluid">
-      <div class="row">
+      <div class="row parent-row">
         <div class="col-12 sales-overview">
           <mat-card appearance="outlined">
-            <mat-card-header style="font-family: 'Catamaran';font-weight: 700;font-size: 22px">Sales Overview
+            <mat-card-header>Sales Overview
             </mat-card-header>
             <mat-card-content>
               <div class="row">
@@ -40,24 +40,7 @@
                       </mat-card>
                     </div>
                     <div class="right-pane-outer">
-                      <tui-axes
-                        class="axes"
-                        [horizontalLines]="2"
-                        [tuiLineChartHint]="hintContent"
-                        [verticalLines]="4"
-                      >
-                        <tui-line-chart
-                          [dots]="true"
-                          [height]="200"
-                          [value]="value1"
-                          [width]="400"
-                          [x]="0"
-                          [xStringify]="stringify"
-                          [y]="0"
-                          [yStringify]="stringify"
-                        />
-                      </tui-axes>
-
+                      <app-total-sales-chart></app-total-sales-chart>
                     </div>
                   </div>
                 </div>
@@ -70,11 +53,7 @@
                       </mat-card>
                     </div>
                     <div class="right-pane-outer">
-                      <tui-bar-set
-                        class="bars"
-                        [size]="null"
-                        [value]="value2"
-                      />
+                      <app-sales-target-chart></app-sales-target-chart>
                     </div>
 
                   </div>
@@ -82,7 +61,7 @@
               </div>
               <br>
               <div class="row">
-                <div class="col-6 s2" >
+                <div class="col-6 s2">
                   <div class="chart-outer">
                     <div class="left-pane-outer">
                       <mat-card appearance="outlined">
@@ -91,20 +70,7 @@
                       </mat-card>
                     </div>
                     <div class="right-pane-outer">
-
-                      <tui-pie-chart
-                        size="m"
-                        [tuiHintContent]="content"
-                        [value]="value3"
-                      />
-
-                      <ng-template
-                        #content
-                        let-index
-                      >
-                        <span>{{ value3[index] | tuiAmount: 'RUB' | async }}</span>
-                        <div>{{ labels[index] }}</div>
-                      </ng-template>
+                      <app-new-customers-chart></app-new-customers-chart>
                     </div>
                   </div>
                 </div>
@@ -121,45 +87,26 @@
             <mat-card-content>
 
               <div class="row">
-                <div class="col-12">
-                  <p>
-                    <tui-input-date-range
-                      [maxlength]="maxLength.month"
-                      [(ngModel)]="range"
-                    >
-                      Range
-                    </tui-input-date-range>
-                  </p>
-
-                  <tui-axes
-                    *ngIf="computeLabels$(range) | async as labels"
-                    class="axes1"
-                    [axisXLabels]="labels"
-                    [horizontalLines]="4"
-                    [verticalLines]="labels.length - 1"
-                  >
-                    <tui-line-days-chart
-                      class="chart"
-                      [height]="200"
-                      [value]="value"
-                      [xStringify]="xStringify$ | async"
-                      [yStringify]="yStringify"
-                    />
-                  </tui-axes>
+                <div class="col-12 monthly-sales-overview-chart">
+                  <app-mothly-sales-chart></app-mothly-sales-chart>
                 </div>
               </div>
-
 
 
             </mat-card-content>
           </mat-card>
 
         </div>
-        <div class="col-12">
+        <div class="col-12 recent-order-table">
+          <mat-card appearance="outlined">
+            <mat-card-header>Recent Orders</mat-card-header>
 
+            <mat-card-content>
+              <app-recent-order-table></app-recent-order-table>
+            </mat-card-content>
+          </mat-card>
         </div>
       </div>
-
 
     </div>
 

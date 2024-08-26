@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&display=swap');
 
 html, body { height: 100%; }
 * { margin: 0; padding: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
@@ -10,3 +11,17 @@ html, body { height: 100%; }
      'GRAD' 0,
      'opsz' 24
  }
+
+
+ ::-webkit-scrollbar{
+   width: 8px
+ }
+
+ ::-webkit-scrollbar-thumb{
+   background: #bababa;
+   //border-radius: 10px;
+ }
+::-webkit-scrollbar-thumb:hover{
+  background: #808080;
+  //border-radius: 10px;
+}
