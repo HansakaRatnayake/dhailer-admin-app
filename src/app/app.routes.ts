@@ -11,16 +11,21 @@ import {
 import {
   DashbordSettingsComponent
 } from "./components/dashboard/inner-components/dashbord-settings/dashbord-settings.component";
+import {MainComponent} from "./components/main/main.component";
 
 export const routes: Routes = [
   {path:'', redirectTo:'/login', pathMatch:"full"},
   {path:'login', component:LoginPageComponent},
-  {path:'dashboard', component:DashboardComponent,children:[
-    {path:'main',component:DashbordMainComponent},
-    {path:'reports',component:DashbordReportsComponent},
-    {path:'settings',component:DashbordSettingsComponent},
-    ]},
-  {path:'customers', component:CustomerComponent },
-  {path:'products', component:ProductComponent },
-  {path:'orders', component:OrderComponent }
+  {path:'main', component:MainComponent, children:[
+      {path:'dashboard', component:DashboardComponent,children:[
+          {path:'', redirectTo:'/main/dashboard/home', pathMatch:"full"},
+          {path:'home',component:DashbordMainComponent},
+          {path:'reports',component:DashbordReportsComponent},
+          {path:'settings',component:DashbordSettingsComponent},
+        ]},
+      {path:'customers', component:CustomerComponent },
+      {path:'products', component:ProductComponent },
+      {path:'orders', component:OrderComponent }
+    ]}
+
 ];

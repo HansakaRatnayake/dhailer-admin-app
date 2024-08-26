@@ -48,13 +48,13 @@ export class DashboardComponent {
   onTabChange(index: number) {
     switch (index) {
       case 0:
-        this.router.navigate(['/dashboard/main']);
+        this.router.navigate(['/main/dashboard/home']);
         break;
       case 1:
-        this.router.navigate(['/dashboard/reports']);
+        this.router.navigate(['/main/dashboard/reports']);
         break;
       case 2:
-        this.router.navigate(['/dashboard/settings']);
+        this.router.navigate(['/main/dashboard/settings']);
         break;
     }
   }
