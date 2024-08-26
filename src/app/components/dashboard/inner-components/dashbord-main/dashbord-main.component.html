@@ -1,0 +1,92 @@
+<div class="dashboard-main-outer">
+
+
+  <div class="container-fluid">
+    <div class="row parent-row">
+      <div class="col-12 sales-overview">
+        <mat-card appearance="outlined">
+          <mat-card-header>Sales Overview
+          </mat-card-header>
+          <mat-card-content>
+            <div class="row">
+              <div class="col-6 s2">
+                <div class="chart-outer">
+                  <div class="left-pane-outer">
+                    <mat-card appearance="outlined">
+                      <mat-card-header>Total Sales</mat-card-header>
+                      <mat-card-content>$120,000</mat-card-content>
+                    </mat-card>
+                  </div>
+                  <div class="right-pane-outer">
+                    <app-total-sales-chart></app-total-sales-chart>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 s1">
+                <div class="chart-outer">
+                  <div class="left-pane-outer">
+                    <mat-card appearance="outlined">
+                      <mat-card-header>Sales Target</mat-card-header>
+                      <mat-card-content>$150,000</mat-card-content>
+                    </mat-card>
+                  </div>
+                  <div class="right-pane-outer">
+                    <app-sales-target-chart></app-sales-target-chart>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-6 s2">
+                <div class="chart-outer">
+                  <div class="left-pane-outer">
+                    <mat-card appearance="outlined">
+                      <mat-card-header>New Customers</mat-card-header>
+                      <mat-card-content>560</mat-card-content>
+                    </mat-card>
+                  </div>
+                  <div class="right-pane-outer">
+                    <app-new-customers-chart></app-new-customers-chart>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <br>
+      <div class="col-12 monthly-sales-overview">
+
+        <mat-card appearance="outlined">
+          <mat-card-header>Monthly Sales Overview</mat-card-header>
+
+          <mat-card-content>
+
+            <div class="row">
+              <div class="col-12 monthly-sales-overview-chart">
+                <app-mothly-sales-chart></app-mothly-sales-chart>
+              </div>
+            </div>
+
+
+          </mat-card-content>
+        </mat-card>
+
+      </div>
+      <div class="col-12 recent-order-table">
+        <mat-card appearance="outlined">
+          <mat-card-header>Recent Orders</mat-card-header>
+
+          <mat-card-content>
+            <app-recent-order-table></app-recent-order-table>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>

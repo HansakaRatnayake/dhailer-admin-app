@@ -12,6 +12,7 @@
   flex-direction: column;
   gap: 55px;
   padding: 10px 0;
+  z-index: 1000;
 
 
 
@@ -48,6 +49,7 @@
       align-items: center;
       justify-content: center;
       line-height: 15px;
+
 
 
       mat-icon{
@@ -117,9 +119,7 @@
           letter-spacing: 1px!important;
         }
       }
-
     }
-
   }
 
   .icon-outer:hover{
@@ -138,3 +138,7 @@
 
 }
 
+.icon-outer.active{
+  background: #CDE4FCFF;
+  color: #0C5EB6FF!important;
+}

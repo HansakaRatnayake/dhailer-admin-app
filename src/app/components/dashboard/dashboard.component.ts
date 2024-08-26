@@ -1,5 +1,5 @@
 import {Component, inject} from '@angular/core';
-import {RouterLink} from "@angular/router";
+import {Router, RouterLink, RouterOutlet} from "@angular/router";
 import {SidePannelBarComponent} from "../../shared/side-pannel-bar/side-pannel-bar.component";
 import {HeaderComponent} from "../../shared/header/header.component";
 import {MatTab, MatTabGroup} from "@angular/material/tabs";
@@ -34,12 +34,28 @@ import {RecentOrderTableComponent} from "./table/recent-order-table/recent-order
     SalesTargetChartComponent,
     NewCustomersChartComponent,
     MothlySalesChartComponent,
-    RecentOrderTableComponent
+    RecentOrderTableComponent,
+    RouterOutlet
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent {
 
+  constructor(private router : Router) {
+  }
 
+  onTabChange(index: number) {
+    switch (index) {
+      case 0:
+        this.router.navigate(['/dashboard/main']);
+        break;
+      case 1:
+        this.router.navigate(['/dashboard/reports']);
+        break;
+      case 2:
+        this.router.navigate(['/dashboard/settings']);
+        break;
+    }
+  }
 }
