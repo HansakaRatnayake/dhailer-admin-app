@@ -15,8 +15,8 @@
     width: 100%;
     height: auto;
 
-    app-header{
-      .account{
+    app-header {
+      .account {
         width: 100%;
         height: 100%;
         display: flex;
@@ -26,7 +26,17 @@
         font-weight: 600;
         font-size: 18px;
 
-        span{
+        mat-icon {
+          width: 20px;
+          font-size: 15px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+        }
+
+
+        span {
           font-family: 'Catamaran';
           font-weight: 500;
           font-size: 16px;
@@ -71,7 +81,7 @@
             height: 80px;
             font-family: 'Catamaran';
             font-weight: 700;
-            font-size: 20px
+            font-size: 20px;
           }
 
           mat-card-content {
@@ -83,39 +93,38 @@
             border-radius: 3px !important;
 
 
-
-            .txt-search-outer{
+            .txt-search-outer {
               display: flex;
-              align-items: center!important;
+              align-items: center !important;
               justify-content: start;
               width: 100%;
               height: 100%;
               font-family: "Catamaran" !important;
               //border: #171a1f 1px solid;
 
-              form{
-                .search-fields{
+              form {
+                .search-fields {
                   margin-top: 20px;
-                  height: 50%;  // Adjust as needed
+                  height: 50%; // Adjust as needed
                   display: flex;
-                  flex-direction: row!important;
+                  flex-direction: row !important;
                   width: 100%;
                   align-items: center;
                   justify-content: start;
                   //border: 1px solid blue;
 
 
-                 mat-label{
-                    padding: 0!important;
-                    margin: 0!important;
+                  mat-label {
+                    padding: 0 !important;
+                    margin: 0 !important;
                   }
 
                   .mat-form-field {
 
                     display: flex;
                     align-items: center;
-                    padding: 0!important;
-                    margin: 0!important;
+                    padding: 0 !important;
+                    margin: 0 !important;
 
                   }
 
@@ -123,13 +132,13 @@
                     height: 100%;
                     display: flex;
                     align-items: center;
-                    padding: 0!important;
-                    margin: 0!important;
+                    padding: 0 !important;
+                    margin: 0 !important;
                   }
 
                 }
 
-                .btn-product-outer{
+                .btn-product-outer {
                   display: flex;
                   align-items: center;
                   justify-content: flex-end;
@@ -138,6 +147,7 @@
                   font-family: "Catamaran" !important;
                   //border: #005cff 1px solid;
                 }
+
                 width: 100%;
                 height: 100%;
                 display: flex;
@@ -145,31 +155,16 @@
                 justify-content: center;
                 //border: #171a1f 1px solid;
 
-
               }
-
-
-
-
             }
-
-
           }
-
-
         }
-
-
-
       }
     }
 
+    form {
 
-
-
-    form{
-
-      mat-label{
+      mat-label {
         font-family: "Poppins";
         font-weight: 400;
         font-size: 13px;
@@ -195,18 +190,12 @@
         //border: #171a1f 1px solid;
       }
 
+
       mat-card {
         width: 100%;
         height: 100%;
         background-color: white;
 
-
-        //mat-card-header{
-        //  font-family: 'Catamaran';
-        //  font-weight: 700;
-        //  font-size: 20px;
-        //  border-radius: 10px 10px 5px 5px;
-        //}
 
         mat-card-content {
 
@@ -258,15 +247,14 @@
               height: 100%;
               background-color: white;
               margin-top: 25px;
-              border: none;
-          ;
+              border: none;;
 
 
               mat-card-header {
                 font-family: 'Catamaran';
                 font-weight: 600;
                 font-size: 16px;
-                padding:3px ;
+                padding: 3px;
                 justify-content: center;
                 //border: 1px solid #0015ff;
                 text-align: center;
@@ -274,12 +262,12 @@
               }
 
               mat-card-content {
-                padding:3px ;
+                padding: 3px;
                 display: flex;
                 align-items: center;
                 justify-content: start;
 
-                .detail-outer{
+                .detail-outer {
                   width: 100%;
                   height: 100%;
                   display: flex;
@@ -287,8 +275,6 @@
                   justify-content: center;
                   flex-direction: column;
                   //border: 1px solid red;
-
-
 
 
                   .price, .status {
@@ -299,16 +285,15 @@
                     justify-content: center;
                     //border: 1px solid #0015ff;
 
-
                   }
 
-                  .price{
+                  .price {
                     font-family: 'Catamaran';
                     font-weight: 500;
                     font-size: 16px;
                   }
 
-                  .status{
+                  .status {
                     font-family: 'Catamaran';
                     font-weight: 400;
                     font-size: 14px;
@@ -321,11 +306,10 @@
                       border-radius: 5px;
                       color: rgba(3, 205, 3, 0.87);
                     }
-
                   }
                 }
 
-                .more-detail-outer{
+                .more-detail-outer {
                   margin-top: 20px;
                   width: 100%;
                   height: 100%;
@@ -335,7 +319,7 @@
                   justify-content: center;
                   //border: #171a1f 1px solid;
 
-                  .product-supplier,.product-id,.supplier-id,.stock-sales,.stock,.sales,.category-revenue,.category,.revenue{
+                  .product-supplier, .product-id, .supplier-id, .stock-sales, .stock, .sales, .category-revenue, .category, .revenue {
                     width: 100%;
                     height: 100%;
                     display: flex;
@@ -345,89 +329,59 @@
 
                   }
 
-                  span{
+                  span {
                     font-family: 'Poppins';
                     font-weight: 300;
                     font-size: 11px;
                   }
 
-                  .product-id,.stock,.category{
+                  .product-id, .stock, .category {
                     padding: 3px;
                     padding-left: 5px;
                     justify-content: start;
                   }
-                  .supplier-id,.sales,.revenue{
+
+                  .supplier-id, .sales, .revenue {
                     padding: 3px;
                     padding-right: 5px;
                     justify-content: end;
                   }
-
-
-
-
-
-
                 }
+              }
 
+              .action {
+                margin-top: 15px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end !important;
+                gap: 10px;
 
+                .actions-update, .actions-delete {
+                  width: 100%;
+                  height: 100%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
 
+                  button {
+                    width: 100%;
+                    border-radius: 8px !important;
+                  }
+                }
               }
             }
           }
-
-
-
         }
-
-
       }
     }
-
-
-
-
-
-
-
-  }
-
-
-}
-
-
-//.container-fluid > .row{
-//  margin-top: 30px;
-//}
-
-
-.context {
-  display: flex;
-  align-items: center;
-  height: 35px;
-
-  span {
-    color: green;
-  }
-
-  span:hover {
-    color: dodgerblue;
-    cursor: pointer;
   }
 }
 
-mat-icon {
-  width: 20px;
-  font-size: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-}
 
-mat-icon:hover {
-  color: red;
-  cursor: pointer;
-}
+
+
 
 
 

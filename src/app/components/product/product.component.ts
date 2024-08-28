@@ -15,10 +15,11 @@ import {ClipboardService} from "../../core/service/clipboard/clipboard.service";
 import {ForexService} from "../../core/service/currencyexchanger/forex.service";
 import {HeaderComponent} from "../../shared/header/header.component";
 import {MatTab, MatTabGroup} from "@angular/material/tabs";
-import {MatCard, MatCardContent, MatCardHeader} from "@angular/material/card";
+import {MatCard, MatCardActions, MatCardContent, MatCardHeader} from "@angular/material/card";
 import {MatFormField} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {MatInputModule} from '@angular/material/input';
+import {MatMenu, MatMenuItem, MatMenuTrigger} from "@angular/material/menu";
 
 
 @Component({
@@ -41,7 +42,11 @@ import {MatInputModule} from '@angular/material/input';
     MatFormField,
     MatInput,
     MatInputModule,
-    MatButton
+    MatButton,
+    MatMenu,
+    MatMenuTrigger,
+    MatMenuItem,
+    MatCardActions
   ],
   templateUrl: './product.component.html',
   styleUrl: './product.component.scss'
