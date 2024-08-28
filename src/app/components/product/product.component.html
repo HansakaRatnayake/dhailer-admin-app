@@ -1,78 +1,535 @@
-<div class="outer" style="padding: 20px">
-  <div class="container">
-    <hr>
-    <h4>Product Managment</h4>
-    <hr>
-    <div class="row">
-      <div class="col-4 txt-search-outer">
-        <form [formGroup]="searchform">
-          <input type="search" name="" id="txt-search" class="form-control txt-search" placeholder="Search hear" formControlName="text">
-        </form>
-      </div>
+<div class="product-outer">
 
-      <div class="col-8 btn-product-outer">
-        <button class="btn btn-primary" (click)="openNewProductDialogBox()">+ New Product</button>
-      </div>
-      <br>
-      <br>
-      <br>
-      <div class="col-12">
-        <table class="table">
-          <thead>
-          <tr>
-            <th>#Id</th>
-            <th>Description</th>
-            <th>Qty</th>
-            <th>Unit Price</th>
-            <th>images</th>
-            <th>Options</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr *ngFor="let product of productarray ">
-            <td>
-              <div class="context">
-                {{product.propertyId}}&nbsp;
-                <mat-icon (click)="coppyText(product.propertyId)">content_copy</mat-icon>
-              </div>
-            </td>
-            <td>
-              <div class="context">
-                {{product.description}}
-              </div>
-            </td>
-            <td>
-              <div class="context">
-                {{product.qty}}
-              </div>
-            </td>
-            <td>
-              <div class="context">
-                {{product.unitprice | currency:'USD'}} | {{product.unitprice * currencyrate | currency:'LKR'}}
-              </div>
-            </td>
-            <td>
-              <div class="context">
-                <span (click)="openManageProductImagesDialogBox(product)">Manage</span>
-              </div>
-            </td>
-            <td>
-              <div class="context">
-                <button color="primary" mat-icon-button matTooltip="edit" (click)="openUpdateProductDialogBox(product)">
-                  <mat-icon>edit</mat-icon>
-                </button>
-                <button color="warn" mat-icon-button  matTooltip="delete" >
-                  <mat-icon>delete_sweep</mat-icon>
-                </button>
-              </div>
-            </td>
-          </tr>
+  <div class="header-outer">
+    <app-header></app-header>
+  </div>
 
-          </tbody>
-        </table>
+
+  <div class="content-outer">
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <mat-card appearance="outlined" class="search-add-card">
+            <mat-card-header>Product Management</mat-card-header>
+            <mat-card-content class="search-outer">
+              <div class="txt-search-outer">
+                <form [formGroup]="searchform">
+                  <div class="search-fields">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Filter by Category</mat-label>
+                      <input matInput  formControlName="text">
+                    </mat-form-field>
+
+                    &nbsp;
+
+                    <mat-form-field appearance="outline">
+                      <mat-label >Filter by Name</mat-label>
+                      <input matInput >
+                    </mat-form-field>
+
+                    &nbsp;
+
+                    <mat-form-field appearance="outline">
+                      <mat-label >Filter by Supplier</mat-label>
+                      <input matInput >
+                    </mat-form-field>
+
+
+                  </div>
+
+                  &nbsp;
+                  <div class="btn-product-outer">
+                    <button mat-flat-button color="warn"><mat-icon>filter_alt</mat-icon> Filter</button>
+                    &nbsp;
+                    <button mat-flat-button (click)="openNewProductDialogBox()"><mat-icon>add_circle</mat-icon> New Product</button>
+                  </div>
+                </form>
+              </div>
+
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+      </div>
+      <div class="row parent-row">
+
+        <div class="col-3">
+          <mat-card appearance="outlined">
+            <mat-card-content>
+
+              <div class="top-pane">
+                <div class="product-image-outer">
+                  <img src="/assets/images/product/shoe-photography.jpg" alt="Product Image">
+                </div>
+              </div>
+
+              <div class="bottom-pane">
+                <mat-card appearance="outlined">
+                  <mat-card-header>
+                    Adidas UltraBoost 1.0 Mens Sportswear Shoes Gray ID5886 NEW Multi Sz
+                  </mat-card-header>
+                  <mat-card-content>
+                    <div class="detail-outer">
+                      <div class="price">$1500.00 | LKR 5000.00</div>
+                      <div class="status"><span>In-Stock</span></div>
+                    </div>
+                    <div class="more-detail-outer">
+                      <div class="product-supplier">
+                        <div class="product-id"><span>Product-id : P150S3#</span></div>
+                        <div class="supplier-id"><span>Supplier-id : S234S2#</span></div>
+                      </div>
+                      <div class="stock-sales">
+                        <div class="stock"><span>Stock : 549</span></div>
+                        <div class="sales"><span>Sales : 151</span></div>
+                      </div>
+                      <div class="category-revenue">
+                        <div class="category"><span>Category : Shoes</span></div>
+                        <div class="revenue"><span>Revenue : 150000.00</span></div>
+                      </div>
+
+                    </div>
+                  </mat-card-content>
+                </mat-card>
+
+              </div>
+
+
+            </mat-card-content>
+          </mat-card>
+
+        </div>
+
+
+
+
+        <div class="col-3">
+          <mat-card appearance="outlined">
+            <mat-card-content>
+
+              <div class="top-pane">
+                <div class="product-image-outer">
+                  <img src="/assets/images/product/shoe-photography.jpg" alt="Product Image">
+                </div>
+              </div>
+
+              <div class="bottom-pane">
+                <mat-card appearance="outlined">
+                  <mat-card-header>
+                    Adidas UltraBoost 1.0 Mens Sportswear Shoes Gray ID5886 NEW Multi Sz
+                  </mat-card-header>
+                  <mat-card-content>
+                    <div class="detail-outer">
+                      <div class="price">$1500.00 | LKR 5000.00</div>
+                      <div class="status"><span style="background-color: rgba(250,0,0,0.26);color: rgba(205,3,3,0.87)">Out-of-Stock</span></div>
+                    </div>
+                    <div class="more-detail-outer">
+                      <div class="product-supplier">
+                        <div class="product-id"><span>Product-id : P150S3#</span></div>
+                        <div class="supplier-id"><span>Supplier-id : S234S2#</span></div>
+                      </div>
+                      <div class="stock-sales">
+                        <div class="stock"><span>Stock : 549</span></div>
+                        <div class="sales"><span>Sales : 151</span></div>
+                      </div>
+                      <div class="category-revenue">
+                        <div class="category"><span>Category : Shoes</span></div>
+                        <div class="revenue"><span>Revenue : 150000.00</span></div>
+                      </div>
+
+                    </div>
+                  </mat-card-content>
+                </mat-card>
+
+              </div>
+
+
+            </mat-card-content>
+          </mat-card>
+
+        </div>
+
+
+
+
+
+
+        <div class="col-3">
+          <mat-card appearance="outlined">
+            <mat-card-content>
+
+              <div class="top-pane">
+                <div class="product-image-outer">
+                  <img src="/assets/images/product/shoe-photography.jpg" alt="Product Image">
+                </div>
+              </div>
+
+              <div class="bottom-pane">
+                <mat-card appearance="outlined">
+                  <mat-card-header>
+                    Adidas UltraBoost 1.0 Mens Sportswear Shoes Gray ID5886 NEW Multi Sz
+                  </mat-card-header>
+                  <mat-card-content>
+                    <div class="detail-outer">
+                      <div class="price">$1500.00 | LKR 5000.00</div>
+                      <div class="status"><span style="background-color: rgba(0,42,250,0.26);color: rgba(3,60,205,0.87)">Pre-order</span></div>
+                    </div>
+                    <div class="more-detail-outer">
+                      <div class="product-supplier">
+                        <div class="product-id"><span>Product-id : P150S3#</span></div>
+                        <div class="supplier-id"><span>Supplier-id : S234S2#</span></div>
+                      </div>
+                      <div class="stock-sales">
+                        <div class="stock"><span>Stock : 549</span></div>
+                        <div class="sales"><span>Sales : 151</span></div>
+                      </div>
+                      <div class="category-revenue">
+                        <div class="category"><span>Category : Shoes</span></div>
+                        <div class="revenue"><span>Revenue : 150000.00</span></div>
+                      </div>
+
+                    </div>
+                  </mat-card-content>
+                </mat-card>
+
+              </div>
+
+
+            </mat-card-content>
+          </mat-card>
+
+        </div>
+
+
+
+
+
+
+
+        <div class="col-3">
+          <mat-card appearance="outlined">
+            <mat-card-content>
+
+              <div class="top-pane">
+                <div class="product-image-outer">
+                  <img src="/assets/images/product/shoe-photography.jpg" alt="Product Image">
+                </div>
+              </div>
+
+              <div class="bottom-pane">
+                <mat-card appearance="outlined">
+                  <mat-card-header>
+                    Adidas UltraBoost 1.0 Mens Sportswear Shoes Gray ID5886 NEW Multi Sz
+                  </mat-card-header>
+                  <mat-card-content>
+                    <div class="detail-outer">
+                      <div class="price">$1500.00 | LKR 5000.00</div>
+                      <div class="status"><span>In-Stock</span></div>
+                    </div>
+                    <div class="more-detail-outer">
+                      <div class="product-supplier">
+                        <div class="product-id"><span>Product-id : P150S3#</span></div>
+                        <div class="supplier-id"><span>Supplier-id : S234S2#</span></div>
+                      </div>
+                      <div class="stock-sales">
+                        <div class="stock"><span>Stock : 549</span></div>
+                        <div class="sales"><span>Sales : 151</span></div>
+                      </div>
+                      <div class="category-revenue">
+                        <div class="category"><span>Category : Shoes</span></div>
+                        <div class="revenue"><span>Revenue : 150000.00</span></div>
+                      </div>
+
+                    </div>
+                  </mat-card-content>
+                </mat-card>
+
+              </div>
+
+
+            </mat-card-content>
+          </mat-card>
+
+        </div>
+
+
+
+
+
+        <div class="col-3">
+          <mat-card appearance="outlined">
+            <mat-card-content>
+
+              <div class="top-pane">
+                <div class="product-image-outer">
+                  <img src="/assets/images/product/shoe-photography.jpg" alt="Product Image">
+                </div>
+              </div>
+
+              <div class="bottom-pane">
+                <mat-card appearance="outlined">
+                  <mat-card-header>
+                    Adidas UltraBoost 1.0 Mens Sportswear Shoes Gray ID5886 NEW Multi Sz
+                  </mat-card-header>
+                  <mat-card-content>
+                    <div class="detail-outer">
+                      <div class="price">$1500.00 | LKR 5000.00</div>
+                      <div class="status"><span>In-Stock</span></div>
+                    </div>
+                    <div class="more-detail-outer">
+                      <div class="product-supplier">
+                        <div class="product-id"><span>Product-id : P150S3#</span></div>
+                        <div class="supplier-id"><span>Supplier-id : S234S2#</span></div>
+                      </div>
+                      <div class="stock-sales">
+                        <div class="stock"><span>Stock : 549</span></div>
+                        <div class="sales"><span>Sales : 151</span></div>
+                      </div>
+                      <div class="category-revenue">
+                        <div class="category"><span>Category : Shoes</span></div>
+                        <div class="revenue"><span>Revenue : 150000.00</span></div>
+                      </div>
+
+                    </div>
+                  </mat-card-content>
+                </mat-card>
+
+              </div>
+
+
+            </mat-card-content>
+          </mat-card>
+
+        </div>
+
+
+
+
+
+        <div class="col-3">
+          <mat-card appearance="outlined">
+            <mat-card-content>
+
+              <div class="top-pane">
+                <div class="product-image-outer">
+                  <img src="/assets/images/product/shoe-photography.jpg" alt="Product Image">
+                </div>
+              </div>
+
+              <div class="bottom-pane">
+                <mat-card appearance="outlined">
+                  <mat-card-header>
+                    Adidas UltraBoost 1.0 Mens Sportswear Shoes Gray ID5886 NEW Multi Sz
+                  </mat-card-header>
+                  <mat-card-content>
+                    <div class="detail-outer">
+                      <div class="price">$1500.00 | LKR 5000.00</div>
+                      <div class="status"><span style="background-color: rgba(250,0,0,0.26);color: rgba(205,3,3,0.87)">Out-of-Stock</span></div>
+                    </div>
+                    <div class="more-detail-outer">
+                      <div class="product-supplier">
+                        <div class="product-id"><span>Product-id : P150S3#</span></div>
+                        <div class="supplier-id"><span>Supplier-id : S234S2#</span></div>
+                      </div>
+                      <div class="stock-sales">
+                        <div class="stock"><span>Stock : 549</span></div>
+                        <div class="sales"><span>Sales : 151</span></div>
+                      </div>
+                      <div class="category-revenue">FF0000FF
+                        <div class="category"><span>Category : Shoes</span></div>
+                        <div class="revenue"><span>Revenue : 150000.00</span></div>
+                      </div>
+
+                    </div>
+                  </mat-card-content>
+                </mat-card>
+
+              </div>
+
+
+            </mat-card-content>
+          </mat-card>
+
+        </div>
+
+
+
+
+
+        <div class="col-3">
+          <mat-card appearance="outlined">
+            <mat-card-content>
+
+              <div class="top-pane">
+                <div class="product-image-outer">
+                  <img src="/assets/images/product/shoe-photography.jpg" alt="Product Image">
+                </div>
+              </div>
+
+              <div class="bottom-pane">
+                <mat-card appearance="outlined">
+                  <mat-card-header>
+                    Adidas UltraBoost 1.0 Mens Sportswear Shoes Gray ID5886 NEW Multi Sz
+                  </mat-card-header>
+                  <mat-card-content>
+                    <div class="detail-outer">
+                      <div class="price">$1500.00 | LKR 5000.00</div>
+                      <div class="status"><span>Out-of-Stock</span></div>
+                    </div>
+                    <div class="more-detail-outer">
+                      <div class="product-supplier">
+                        <div class="product-id"><span>Product-id : P150S3#</span></div>
+                        <div class="supplier-id"><span>Supplier-id : S234S2#</span></div>
+                      </div>
+                      <div class="stock-sales">
+                        <div class="stock"><span>Stock : 549</span></div>
+                        <div class="sales"><span>Sales : 151</span></div>
+                      </div>
+                      <div class="category-revenue">
+                        <div class="category"><span>Category : Shoes</span></div>
+                        <div class="revenue"><span>Revenue : 150000.00</span></div>
+                      </div>
+
+                    </div>
+                  </mat-card-content>
+                </mat-card>
+
+              </div>
+
+
+            </mat-card-content>
+          </mat-card>
+
+        </div>
+
+
+
+
+        <div class="col-3">
+          <mat-card appearance="outlined">
+            <mat-card-content>
+
+              <div class="top-pane">
+                <div class="product-image-outer">
+                  <img src="/assets/images/product/shoe-photography.jpg" alt="Product Image">
+                </div>
+              </div>
+
+              <div class="bottom-pane">
+                <mat-card appearance="outlined">
+                  <mat-card-header>
+                    Adidas UltraBoost 1.0 Mens Sportswear Shoes Gray ID5886 NEW Multi Sz
+                  </mat-card-header>
+                  <mat-card-content>
+                    <div class="detail-outer">
+                      <div class="price">$1500.00 | LKR 5000.00</div>
+                      <div class="status"><span>In-Stock</span></div>
+                    </div>
+                    <div class="more-detail-outer">
+                      <div class="product-supplier">
+                        <div class="product-id"><span>Product-id : P150S3#</span></div>
+                        <div class="supplier-id"><span>Supplier-id : S234S2#</span></div>
+                      </div>
+                      <div class="stock-sales">
+                        <div class="stock"><span>Stock : 549</span></div>
+                        <div class="sales"><span>Sales : 151</span></div>
+                      </div>
+                      <div class="category-revenue">
+                        <div class="category"><span>Category : Shoes</span></div>
+                        <div class="revenue"><span>Revenue : 150000.00</span></div>
+                      </div>
+
+                    </div>
+                  </mat-card-content>
+                </mat-card>
+
+              </div>
+
+
+            </mat-card-content>
+          </mat-card>
+
+        </div>
 
 
       </div>
     </div>
+
   </div>
+
+
+  <!--  <div class="container">-->
+  <!--    <div class="row">-->
+  <!--      <div class="col-4 txt-search-outer">-->
+  <!--        <form [formGroup]="searchform">-->
+  <!--          <input type="search" name="" id="txt-search" class="form-control txt-search" placeholder="Search hear"-->
+  <!--                 formControlName="text">-->
+  <!--        </form>-->
+  <!--      </div>-->
+
+  <!--      <div class="col-8 btn-product-outer">-->
+  <!--        <button class="btn btn-primary" (click)="openNewProductDialogBox()">+ New Product</button>-->
+  <!--      </div>-->
+  <!--      <br>-->
+  <!--      <br>-->
+  <!--      <br>-->
+  <!--      <div class="col-12">-->
+  <!--        <table class="table">-->
+  <!--          <thead>-->
+  <!--          <tr>-->
+  <!--            <th>#Id</th>-->
+  <!--            <th>Description</th>-->
+  <!--            <th>Qty</th>-->
+  <!--            <th>Unit Price</th>-->
+  <!--            <th>images</th>-->
+  <!--            <th>Options</th>-->
+  <!--          </tr>-->
+  <!--          </thead>-->
+  <!--          <tbody>-->
+  <!--          <tr *ngFor="let product of productarray ">-->
+  <!--            <td>-->
+  <!--              <div class="context">-->
+  <!--                {{ product.propertyId }}&nbsp;-->
+  <!--                <mat-icon (click)="coppyText(product.propertyId)">content_copy</mat-icon>-->
+  <!--              </div>-->
+  <!--            </td>-->
+  <!--            <td>-->
+  <!--              <div class="context">-->
+  <!--                {{ product.description }}-->
+  <!--              </div>-->
+  <!--            </td>-->
+  <!--            <td>-->
+  <!--              <div class="context">-->
+  <!--                {{ product.qty }}-->
+  <!--              </div>-->
+  <!--            </td>-->
+  <!--            <td>-->
+  <!--              <div class="context">-->
+  <!--                {{ product.unitprice | currency:'USD' }} | {{ product.unitprice * currencyrate | currency:'LKR' }}-->
+  <!--              </div>-->
+  <!--            </td>-->
+  <!--            <td>-->
+  <!--              <div class="context">-->
+  <!--                <span (click)="openManageProductImagesDialogBox(product)">Manage</span>-->
+  <!--              </div>-->
+  <!--            </td>-->
+  <!--            <td>-->
+  <!--              <div class="context">-->
+  <!--                <button color="primary" mat-icon-button matTooltip="edit" (click)="openUpdateProductDialogBox(product)">-->
+  <!--                  <mat-icon>edit</mat-icon>-->
+  <!--                </button>-->
+  <!--                <button color="warn" mat-icon-button matTooltip="delete">-->
+  <!--                  <mat-icon>delete_sweep</mat-icon>-->
+  <!--                </button>-->
+  <!--              </div>-->
+  <!--            </td>-->
+  <!--          </tr>-->
+
+  <!--          </tbody>-->
+  <!--        </table>-->
+
+
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </div>-->
 </div>

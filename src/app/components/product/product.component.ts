@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CustomerActivestatusComponent} from "../customer/inner/customer-activestatus/customer-activestatus.component";
 import {MatIcon} from "@angular/material/icon";
-import {MatIconButton} from "@angular/material/button";
+import {MatButton, MatIconButton} from "@angular/material/button";
 import {MatDialog} from "@angular/material/dialog";
 import {NewProductComponent} from "./inner/new-product/new-product.component";
 import {UpdateProductComponent} from "./inner/update-product/update-product.component";
@@ -13,6 +13,12 @@ import {FormControl, FormGroup, ReactiveFormsModule} from "@angular/forms";
 import {debounceTime} from "rxjs";
 import {ClipboardService} from "../../core/service/clipboard/clipboard.service";
 import {ForexService} from "../../core/service/currencyexchanger/forex.service";
+import {HeaderComponent} from "../../shared/header/header.component";
+import {MatTab, MatTabGroup} from "@angular/material/tabs";
+import {MatCard, MatCardContent, MatCardHeader} from "@angular/material/card";
+import {MatFormField} from "@angular/material/form-field";
+import {MatInput} from "@angular/material/input";
+import {MatInputModule} from '@angular/material/input';
 
 
 @Component({
@@ -25,7 +31,17 @@ import {ForexService} from "../../core/service/currencyexchanger/forex.service";
     MatTooltip,
     NgForOf,
     ReactiveFormsModule,
-    CurrencyPipe
+    CurrencyPipe,
+    HeaderComponent,
+    MatTab,
+    MatTabGroup,
+    MatCard,
+    MatCardContent,
+    MatCardHeader,
+    MatFormField,
+    MatInput,
+    MatInputModule,
+    MatButton
   ],
   templateUrl: './product.component.html',
   styleUrl: './product.component.scss'

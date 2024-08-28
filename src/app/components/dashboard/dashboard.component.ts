@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {AfterViewInit, ChangeDetectorRef, Component, DoCheck, inject, OnChanges, OnInit} from '@angular/core';
 import {Router, RouterLink, RouterOutlet} from "@angular/router";
 import {SidePannelBarComponent} from "../../shared/side-pannel-bar/side-pannel-bar.component";
 import {HeaderComponent} from "../../shared/header/header.component";
@@ -40,10 +40,23 @@ import {RecentOrderTableComponent} from "./table/recent-order-table/recent-order
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit,DoCheck{
 
-  constructor(private router : Router) {
+  readonly router = inject(Router);
+
+  selectedTabIndex : number = 0;
+
+
+  ngOnInit(): void {
+
+    const rout = this.router.url;
+
+    if (rout.includes('/main/dashboard/home')) this.selectedTabIndex = 0;
+    if (rout.includes('/main/dashboard/reports')) this.selectedTabIndex = 1;
+    if (rout.includes('/main/dashboard/settings')) this.selectedTabIndex = 2;
+
   }
+
 
   onTabChange(index: number) {
     switch (index) {
@@ -58,4 +71,11 @@ export class DashboardComponent {
         break;
     }
   }
+
+  ngDoCheck(): void {
+    // console.log(this.router.url);
+
+  }
+
+
 }

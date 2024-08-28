@@ -1,18 +1,402 @@
-.context{
+
+.product-outer {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  //border: 1px solid red;
+  background: #FFFFFFFF;
+  font-family: "Catamaran" !important;
+
+
+  .header-outer {
+    width: 100%;
+    height: auto;
+  }
+
+  .content-outer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    overflow-y: auto;
+    padding: 60px 0;
+
+    .row {
+      width: 100%;
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .col-12 {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        //border: 1px solid green;
+
+        mat-card {
+          width: 90rem;
+          background-color: white;
+          border: none;
+          border-radius: 3px !important;
+          box-shadow: 0 0 0.5px rgb(23, 26, 31), 0 0 1px rgb(23, 26, 31); /* shadow-xs */
+
+
+          mat-card-header {
+            height: 80px;
+            font-family: 'Catamaran';
+            font-weight: 700;
+            font-size: 20px
+          }
+
+          mat-card-content {
+            width: 100%;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 3px !important;
+
+
+
+            .txt-search-outer{
+              display: flex;
+              align-items: center!important;
+              justify-content: start;
+              width: 100%;
+              height: 100%;
+              font-family: "Catamaran" !important;
+              //border: #171a1f 1px solid;
+
+              form{
+                .search-fields{
+                  margin-top: 20px;
+                  height: 50%;  // Adjust as needed
+                  display: flex;
+                  flex-direction: row!important;
+                  width: 100%;
+                  align-items: center;
+                  justify-content: start;
+                  //border: 1px solid blue;
+
+
+                 mat-label{
+                    padding: 0!important;
+                    margin: 0!important;
+                  }
+
+                  .mat-form-field {
+
+                    display: flex;
+                    align-items: center;
+                    padding: 0!important;
+                    margin: 0!important;
+
+                  }
+
+                  input[matInput] {
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    padding: 0!important;
+                    margin: 0!important;
+                  }
+
+                }
+
+                .btn-product-outer{
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-end;
+                  width: 100%;
+                  height: 100%;
+                  font-family: "Catamaran" !important;
+                  //border: #005cff 1px solid;
+                }
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                //border: #171a1f 1px solid;
+
+
+              }
+
+
+
+
+            }
+
+
+          }
+
+
+        }
+
+
+
+      }
+    }
+
+
+
+
+    form{
+
+      mat-label{
+        font-family: "Poppins";
+        font-weight: 400;
+        font-size: 13px;
+      }
+
+    }
+
+
+    .parent-row {
+      margin-top: 40px;
+      //border: 1px red solid;
+      padding-left: 200px;
+      padding-right: 200px;
+      //gap: 5px;
+      //border: red 1px solid;
+
+      .col-3 {
+        height: 100%;
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        margin-top: 10px;
+        //border: #171a1f 1px solid;
+      }
+
+      mat-card {
+        width: 100%;
+        height: 100%;
+        background-color: white;
+
+
+        //mat-card-header{
+        //  font-family: 'Catamaran';
+        //  font-weight: 700;
+        //  font-size: 20px;
+        //  border-radius: 10px 10px 5px 5px;
+        //}
+
+        mat-card-content {
+
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          margin-top: 5px;
+
+
+          .top-pane, .bottom-pane {
+            width: 100%;
+            height: 100%;
+            //border: red 1px solid;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .top-pane {
+
+            .product-image-outer {
+              width: 100%;
+              height: 150px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              //border: 1px rgba(126, 126, 126, 0.38) dotted;
+              border-radius: 10px;
+              z-index: 100;
+
+
+              img {
+                width: 100%;
+                border-radius: 5px;
+              }
+            }
+          }
+
+          .bottom-pane {
+            align-items: center;
+            justify-content: center;
+
+
+            mat-card {
+              width: 100%;
+              height: 100%;
+              background-color: white;
+              margin-top: 25px;
+              border: none;
+          ;
+
+
+              mat-card-header {
+                font-family: 'Catamaran';
+                font-weight: 600;
+                font-size: 16px;
+                padding:3px ;
+                justify-content: center;
+                //border: 1px solid #0015ff;
+                text-align: center;
+
+              }
+
+              mat-card-content {
+                padding:3px ;
+                display: flex;
+                align-items: center;
+                justify-content: start;
+
+                .detail-outer{
+                  width: 100%;
+                  height: 100%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  flex-direction: column;
+                  //border: 1px solid red;
+
+
+
+
+                  .price, .status {
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    align-items: start;
+                    justify-content: center;
+                    //border: 1px solid #0015ff;
+
+
+                  }
+
+                  .price{
+                    font-family: 'Catamaran';
+                    font-weight: 500;
+                    font-size: 16px;
+                  }
+
+                  .status{
+                    font-family: 'Catamaran';
+                    font-weight: 400;
+                    font-size: 14px;
+
+                    span {
+                      background-color: rgba(0, 250, 0, 0.26);
+                      padding: 0 10px;
+                      width: auto;
+                      height: auto;
+                      border-radius: 5px;
+                      color: rgba(3, 205, 3, 0.87);
+                    }
+
+                  }
+                }
+
+                .more-detail-outer{
+                  margin-top: 20px;
+                  width: 100%;
+                  height: 100%;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  justify-content: center;
+                  //border: #171a1f 1px solid;
+
+                  .product-supplier,.product-id,.supplier-id,.stock-sales,.stock,.sales,.category-revenue,.category,.revenue{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    //border: #171a1f 1px solid;
+
+                  }
+
+                  span{
+                    font-family: 'Poppins';
+                    font-weight: 300;
+                    font-size: 11px;
+                  }
+
+                  .product-id,.stock,.category{
+                    padding: 3px;
+                    padding-left: 5px;
+                    justify-content: start;
+                  }
+                  .supplier-id,.sales,.revenue{
+                    padding: 3px;
+                    padding-right: 5px;
+                    justify-content: end;
+                  }
+
+
+
+
+
+
+                }
+
+
+
+              }
+            }
+          }
+
+
+
+        }
+
+
+      }
+    }
+
+
+
+
+
+
+
+  }
+
+
+}
+
+
+//.container-fluid > .row{
+//  margin-top: 30px;
+//}
+
+
+.context {
   display: flex;
   align-items: center;
   height: 35px;
 
-  span{
+  span {
     color: green;
   }
-  span:hover{
+
+  span:hover {
     color: dodgerblue;
     cursor: pointer;
   }
 }
 
-mat-icon{
+mat-icon {
   width: 20px;
   font-size: 15px;
   display: flex;
@@ -21,18 +405,10 @@ mat-icon{
 
 }
 
-mat-icon:hover{
+mat-icon:hover {
   color: red;
   cursor: pointer;
 }
 
-.btn-product-outer{
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-.txt-search-outer{
-  align-content: center;
-}
 
 

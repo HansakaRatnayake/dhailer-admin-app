@@ -8,19 +8,17 @@
 
 
 <div class="dashboard-outer">
-  <!--  <div class="left-pane">-->
-  <!--    <div class="side-nav-outer">-->
-  <!--      <app-side-pannel-bar></app-side-pannel-bar>-->
-  <!--    </div>-->
-  <!--  </div>-->
-
 
     <div class="header-outer">
       <app-header>
-        <mat-tab-group animationDuration="600ms" color="accent" (selectedIndexChange)="onTabChange($event)">
-          <mat-tab label="Dashboard" ></mat-tab>
-          <mat-tab label="Reports" ></mat-tab>
-          <mat-tab label="Settings"></mat-tab>
+        <mat-tab-group
+          animationDuration="600ms"
+          color="accent"
+          (selectedIndexChange)="onTabChange($event)"
+          [selectedIndex]="selectedTabIndex">
+              <mat-tab label="Dashboard" ></mat-tab>
+              <mat-tab label="Reports" ></mat-tab>
+              <mat-tab label="Settings"></mat-tab>
         </mat-tab-group>
       </app-header>
     </div>
@@ -28,8 +26,5 @@
     <div class="content-outer">
       <router-outlet></router-outlet>
     </div>
-
-
-
 
 </div>
