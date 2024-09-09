@@ -1,5 +1,5 @@
 
-.order-outer{
+.order-outer {
   display: flex;
   align-items: center;
   justify-content: start;
@@ -8,53 +8,250 @@
   height: 100%;
   //border: 1px solid red;
   background: #FFFFFFFF;
+  font-family: "Catamaran" !important;
 
 
-  .header-outer{
+  .header-outer {
     width: 100%;
     height: auto;
+
+    app-header {
+      .account {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        font-family: 'Catamaran';
+        font-weight: 600;
+        font-size: 18px;
+
+        mat-icon {
+          width: 20px;
+          font-size: 15px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+        }
+
+
+        span {
+          font-family: 'Catamaran';
+          font-weight: 500;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .content-outer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    overflow-y: auto;
+    padding: 60px 0;
+
+    .row {
+      width: 100%;
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .col-12 {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        //border: 1px solid green;
+
+        mat-card {
+          width: 90rem;
+          background-color: white;
+          border: none;
+          border-radius: 3px !important;
+          box-shadow: 0 0 0.5px rgb(23, 26, 31), 0 0 1px rgb(23, 26, 31); /* shadow-xs */
+
+
+          mat-card-header {
+            height: 80px;
+            font-family: 'Catamaran';
+            font-weight: 700;
+            font-size: 20px;
+          }
+
+          mat-card-content {
+            width: 100%;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 3px !important;
+
+
+            .txt-search-outer {
+              display: flex;
+              align-items: center !important;
+              justify-content: start;
+              width: 100%;
+              height: 100%;
+              font-family: "Catamaran" !important;
+              //border: #171a1f 1px solid;
+
+              form {
+                .search-fields {
+                  margin-top: 20px;
+                  height: 50%; // Adjust as needed
+                  display: flex;
+                  flex-direction: row !important;
+                  width: 100%;
+                  align-items: center;
+                  justify-content: start;
+                  //border: 1px solid blue;
+
+
+                  mat-label {
+                    padding: 0 !important;
+                    margin: 0 !important;
+                  }
+
+                  .mat-form-field {
+
+                    display: flex;
+                    align-items: center;
+                    padding: 0 !important;
+                    margin: 0 !important;
+
+                  }
+
+                  input[matInput] {
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    padding: 0 !important;
+                    margin: 0 !important;
+                  }
+
+                }
+
+                .btn-product-outer {
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-end;
+                  width: 100%;
+                  height: 100%;
+                  font-family: "Catamaran" !important;
+                  //border: #005cff 1px solid;
+                }
+
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                //border: #171a1f 1px solid;
+
+              }
+            }
+          }
+        }
+      }
+    }
+
+    form {
+
+      mat-label {
+        font-family: "Poppins";
+        font-weight: 400;
+        font-size: 13px;
+      }
+
+    }
+
   }
 
 
-}
+  .content-outer{
+    .parent-row{
+
+      //border: 1px red solid;
+      padding-left: 200px;
+      padding-right: 200px;
 
 
 
-.context{
-  display: flex;
-  align-items: center;
-  height: 35px;
+      .col-2{
+        margin-top: 15px;
+        mat-card{
 
-  span{
-    color: green;
+          width: 200px;
+          height: 150px;
+          background-color: white;
+          border-radius: 10px;
+          box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+          mat-card-content{
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Poppins';
+            font-weight: 400;
+            font-size: 12px;
+          }
+
+        }
+        mat-card:hover{
+          cursor: pointer;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+          scale: 90%;
+        }
+      }
+
+    }
+
   }
-  span:hover{
-    color: dodgerblue;
-    cursor: pointer;
-  }
-}
-
-mat-icon{
-  width: 20px;
-  font-size: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
 }
 
-mat-icon:hover{
-  color: red;
-  cursor: pointer;
-}
 
-.btn-product-outer{
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-.txt-search-outer{
-  align-content: center;
-}
-
-
+//.context{
+//  display: flex;
+//  align-items: center;
+//  height: 35px;
+//
+//  span{
+//    color: green;
+//  }
+//  span:hover{
+//    color: dodgerblue;
+//    cursor: pointer;
+//  }
+//}
+//
+//mat-icon{
+//  width: 20px;
+//  font-size: 15px;
+//  display: flex;
+//  align-items: center;
+//  justify-content: center;
+//
+//}
+//
+//mat-icon:hover{
+//  color: red;
+//  cursor: pointer;
+//}
+//
+//.btn-product-outer{
+//  display: flex;
+//  align-items: center;
+//  justify-content: flex-end;
+//}
+//.txt-search-outer{
+//  align-content: center;
+//}
+//
+//

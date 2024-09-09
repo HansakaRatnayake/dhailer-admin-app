@@ -221,18 +221,29 @@
 
             .product-image-outer {
               width: 100%;
-              height: 150px;
+              height: 200px;
               display: flex;
               align-items: center;
               justify-content: center;
               //border: 1px rgba(126, 126, 126, 0.38) dotted;
               border-radius: 10px;
-              z-index: 100;
+
 
 
               img {
+                display: block;
                 width: 100%;
+                height: 100%;
                 border-radius: 5px;
+              }
+              button{
+                position: absolute;
+                top: 30px;
+                right: 25px;
+                z-index: 100;
+                height: 45px;
+                color: white;
+                background-color: rgba(0, 0, 0, 0.55);
               }
             }
           }
@@ -258,6 +269,7 @@
                 justify-content: center;
                 //border: 1px solid #0015ff;
                 text-align: center;
+                height: 90px!important;
 
               }
 
@@ -319,6 +331,15 @@
                   justify-content: center;
                   //border: #171a1f 1px solid;
 
+                  //.detail-outer{
+                  //  width: 100%;
+                  //  height: 100%;
+                  //  display: flex;
+                  //  flex-direction: column;
+                  //  align-items: center;
+                  //  justify-content: center;
+                  //}
+
                   .product-supplier, .product-id, .supplier-id, .stock-sales, .stock, .sales, .category-revenue, .category, .revenue {
                     width: 100%;
                     height: 100%;
@@ -329,22 +350,44 @@
 
                   }
 
+                  .product-supplier{
+                    flex-direction: column;
+
+                    .product-id,.supplier-id{
+                      justify-content: start!important;
+                      span{
+                        text-align: left!important;
+                      }
+                    }
+
+                  }
+
                   span {
                     font-family: 'Poppins';
-                    font-weight: 300;
+                    font-weight: 400;
                     font-size: 11px;
                   }
 
-                  .product-id, .stock, .category {
+                  .product-id, .supplier-id, .stock, .category {
                     padding: 3px;
                     padding-left: 5px;
                     justify-content: start;
+                    span{
+                      text-align: left;
+                    }
+
+
                   }
 
-                  .supplier-id, .sales, .revenue {
+                  .sales, .revenue {
                     padding: 3px;
                     padding-right: 5px;
                     justify-content: end;
+
+                    span{
+                      text-align: right;
+                    }
+
                   }
                 }
               }

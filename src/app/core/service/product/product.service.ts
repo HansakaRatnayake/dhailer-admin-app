@@ -2,6 +2,10 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpParams} from "@angular/common/http";
 import {Observable} from "rxjs";
 import * as http from "node:http";
+import {ProductComponent} from "../../../components/product/product.component";
+import {Product} from "../../entity/Product";
+import {StandardResponce} from "../../entity/StandardResponce";
+import {Paginate} from "../../entity/Paginate";
 
 @Injectable({
   providedIn: 'root'
@@ -21,13 +25,13 @@ export class ProductService {
     })
   }
 
-  search(searchtext:any, page:number, size:number):Observable<any>{
+  search(searchtext:any, page:number, size:number) {
     let params  = new HttpParams();
     params = params.append('searchtext',searchtext);
     params = params.append('page',page);
     params = params.append('size',size);
 
-    return this.http.get(`${this.baseurl}/list`,{params:params});
+    return this.http.get<StandardResponce<Paginate<Product>>>(`${this.baseurl}/list`,{params:params});
   }
 
   update(id:string,product:any) : Observable<any>{
